@@ -18,7 +18,15 @@ namespace AutomatedTrainer.Models
         public DateTime BirthDate { get; set; }
         public List<Examination> Examinations { get; set; }
 
-        public Patient(string name, string surName, string lastName, Sex sex, DateTime birthDate, List<Examination> examinations)
+        public string FullName
+        {
+            get
+            {
+                return $"{SurName} {Name} {LastName}";
+            }
+        }
+
+        public Patient(string name, string surName, string lastName, Sex sex, DateTime birthDate, IEnumerable<Examination> examinations)
             :this(name,surName,lastName,sex,birthDate)
         {
             if (examinations != null)
@@ -31,7 +39,7 @@ namespace AutomatedTrainer.Models
         {
             Name = name;
             SurName = surName;
-            lastName = LastName;
+            LastName = lastName;
             Sex = sex;
             BirthDate = birthDate;
             Examinations = new List<Examination>();

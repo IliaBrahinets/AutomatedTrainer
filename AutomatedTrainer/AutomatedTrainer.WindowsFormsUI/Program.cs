@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AutomatedTrainer.Store;
 
 namespace AutomatedTrainer.WindowsFormsUI
 {
@@ -16,8 +17,12 @@ namespace AutomatedTrainer.WindowsFormsUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CreatePatientForm());
-            
+
+            StoreInitializers.Initialize();
+
+            //Application.Run(new CreateExaminationForm(new Models.Patient("Илья", "Брагинец", "Андреевич", Models.Sex.Female, DateTime.Now)));
+            //Application.Run(new CreatePatientForm());
+            Application.Run(new ExaminationViewForm());
         }
     }
 }

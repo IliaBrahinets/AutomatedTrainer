@@ -78,9 +78,6 @@
             // Sex
             // 
             this.Sex.FormattingEnabled = true;
-            this.Sex.Items.AddRange(new object[] {
-            AutomatedTrainer.Models.Sex.Male,
-            AutomatedTrainer.Models.Sex.Female});
             this.Sex.Location = new System.Drawing.Point(54, 179);
             this.Sex.Name = "Sex";
             this.Sex.Size = new System.Drawing.Size(246, 21);

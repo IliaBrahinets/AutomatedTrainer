@@ -8,18 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AutomatedTrainer.Models;
-using AutomatedTrainer.WindowsFormsUI.Helpers;
 
 namespace AutomatedTrainer.WindowsFormsUI
 {
     using AutomatedTrainer.Store;
 
-    public partial class CreatePatientForm : Form
+    public partial class CreateExaminationForm : Form
     {
-        public CreatePatientForm()
+        private Patient WhosExamination { get; set; }
+
+        public CreateExaminationForm(Patient patient)
         {
             InitializeComponent();
             CustomInitialize();
+
+            WhosExamination = patient;
+            WhosExaminationLabel.Text = patient.FullName;
         }
 
         /// <summary>
@@ -29,21 +33,17 @@ namespace AutomatedTrainer.WindowsFormsUI
         /// </summary>
         public void CustomInitialize()
         {
-            //Sex
-            Sex.Items.AddRange(new object[]
-            {
-                Models.Sex.Male,
-                Models.Sex.Female
-            });
+            //PhysicalIndicators
+            PhysicalIndicatorsPicker.Items.AddRange(Store.Instance.GetPhysicalIndicators());
             //
         }
 
         private void Submit_Click(object sender, EventArgs e)
         {
-            Patient patient = new Patient(FirstName.Text, SurName.Text, LastName.Text, 
-                                            Sex.ParseEnum<Sex>(), BirthDate.Value);
+            Examination examination = new Examination(Date.Value, Type.Text,
+                                        PhysicalIndicatorsPicker.CheckedItems.OfType<PhysicalIndicator>());
 
-            Store.Instance.AddPatient(patient);
+            WhosExamination.Examinations.Add(examination);
 
             this.Close();
         }

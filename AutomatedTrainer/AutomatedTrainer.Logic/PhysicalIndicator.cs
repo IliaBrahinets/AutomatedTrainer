@@ -27,6 +27,11 @@ namespace AutomatedTrainer.Models
                 return 0;
         }
 
+        public override string ToString()
+        {
+            return $"{Name} {MeasureUnits}";
+        }
+
         protected ISensor Sensor;
 
 
