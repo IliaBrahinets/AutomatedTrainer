@@ -16,10 +16,18 @@ namespace AutomatedTrainer.Models
         public List<PhysicalIndicator> PhysicalIndicators { get; set; }
 
         public Examination(DateTime date, string type, List<PhysicalIndicator> physicalIndicators)
+            :this(date,type)
         {
             Date = date;
             Type = type;
-            PhysicalIndicators = new List<PhysicalIndicator>(physicalIndicators);
+            PhysicalIndicators.AddRange(physicalIndicators);
+        }
+
+        public Examination(DateTime date, string type)
+        {
+            Date = date;
+            Type = type;
+            PhysicalIndicators = new List<PhysicalIndicator>();
         }
     }
 }

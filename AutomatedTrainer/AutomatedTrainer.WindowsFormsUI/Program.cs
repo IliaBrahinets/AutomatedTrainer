@@ -16,7 +16,8 @@ namespace AutomatedTrainer.WindowsFormsUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CreaatePatientForm());
+            Application.Run(new CreatePatientForm());
+            
         }
     }
 }

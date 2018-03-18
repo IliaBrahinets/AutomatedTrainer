@@ -9,7 +9,10 @@ namespace AutomatedTrainer.Models
 {
     public abstract class PhysicalIndicator
     {
-        protected ISensor Sensor;
+
+        public string Name { get; protected set; }
+        public string MeasureUnits { get; protected set; }
+
 
         public PhysicalIndicator(ISensor sensor)
         {
@@ -24,8 +27,9 @@ namespace AutomatedTrainer.Models
                 return 0;
         }
 
-        public string Name { get; protected set; }
-        public string MeasureUnits { get; protected set; }
+        protected ISensor Sensor;
+
+
 
     }
 }

@@ -19,13 +19,22 @@ namespace AutomatedTrainer.Models
         public List<Examination> Examinations { get; set; }
 
         public Patient(string name, string surName, string lastName, Sex sex, DateTime birthDate, List<Examination> examinations)
+            :this(name,surName,lastName,sex,birthDate)
+        {
+            if (examinations != null)
+            {
+                Examinations.AddRange(examinations);
+            }
+        }
+
+        public Patient(string name, string surName, string lastName, Sex sex, DateTime birthDate)
         {
             Name = name;
             SurName = surName;
             lastName = LastName;
             Sex = sex;
             BirthDate = birthDate;
-            Examinations = new List<Examination>(examinations);
+            Examinations = new List<Examination>();
         }
 
     }
