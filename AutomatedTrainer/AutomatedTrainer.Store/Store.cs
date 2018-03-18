@@ -28,9 +28,9 @@ namespace AutomatedTrainer.Store
             Sensors = new List<ISensor>();
         }
 
-        private List<Patient> Patients;
-        private List<PhysicalIndicator> PhysicalIndicators;
-        private List<ISensor> Sensors;
+        private List<Patient> Patients { get; set; }
+        private List<PhysicalIndicator> PhysicalIndicators { get; set; }
+        private List<ISensor> Sensors { get; set; }
 
 
         public void AddPatient(Patient patient)

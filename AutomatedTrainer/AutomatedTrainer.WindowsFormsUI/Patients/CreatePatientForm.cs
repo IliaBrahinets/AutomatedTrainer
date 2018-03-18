@@ -30,5 +30,6 @@ namespace AutomatedTrainer.WindowsFormsUI
 
             this.Close();
         }
+
     }
 }
