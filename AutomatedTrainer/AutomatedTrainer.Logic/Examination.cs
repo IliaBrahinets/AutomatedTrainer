@@ -14,7 +14,7 @@ namespace AutomatedTrainer.Models
     {
         public DateTime Date { get; set; }
         public string Type { get; set; }
-        public BindingList<PhysicalIndicator> PhysicalIndicators { get; set; }
+        public List<PhysicalIndicator> PhysicalIndicators { get; set; }
 
         public Examination(DateTime date, string type, IEnumerable<PhysicalIndicator> physicalIndicators)
             :this(date,type)
@@ -31,7 +31,7 @@ namespace AutomatedTrainer.Models
         {
             Date = date;
             Type = type;
-            PhysicalIndicators = new BindingList<PhysicalIndicator>();
+            PhysicalIndicators = new List<PhysicalIndicator>();
         }
     }
 }

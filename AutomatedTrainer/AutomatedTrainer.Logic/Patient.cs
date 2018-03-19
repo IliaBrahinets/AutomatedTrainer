@@ -17,7 +17,7 @@ namespace AutomatedTrainer.Models
         public string LastName { get; set; }
         public Sex Sex { get; set; }
         public DateTime BirthDate { get; set; }
-        public BindingList<Examination> Examinations { get; set; }
+        public List<Examination> Examinations { get; set; }
 
         public string FullName
         {
@@ -46,7 +46,7 @@ namespace AutomatedTrainer.Models
             LastName = lastName;
             Sex = sex;
             BirthDate = birthDate;
-            Examinations = new BindingList<Examination>();
+            Examinations = new List<Examination>();
         }
 
     }

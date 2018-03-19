@@ -52,15 +52,15 @@ namespace AutomatedTrainer.WindowsFormsUI
         {
             Form next = new CreateExaminationForm(WhosExaminations);
 
-            this.Hide();
-
             next.FormClosed += (s, args) =>
             {
-                this.Show();
+                new ExaminationViewForm(WhosExaminations).Show();
             };
 
             next.Show();
             next.Focus();
+
+            this.Close();
         }
     }
 }
