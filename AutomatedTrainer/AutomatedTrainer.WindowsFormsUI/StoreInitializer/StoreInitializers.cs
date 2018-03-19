@@ -19,6 +19,15 @@ namespace AutomatedTrainer.Store
             Store.Instance.AddPhysicalIndicator(new HeartRateIndicator(randomSensor));
             Store.Instance.AddPhysicalIndicator(new SkinMoistureIndicator(randomSensor));
             Store.Instance.AddPhysicalIndicator(new SkinTemperatureIndicator(randomSensor));
+
+            Examination examination = new Examination(DateTime.Now, "sdsdsd", Store.Instance.GetPhysicalIndicators());
+
+            var examinations = new List<Examination>();
+            examinations.Add(examination);
+
+            Patient patient = new Patient("sdsd", "dsd", "sdsd", Sex.Male, DateTime.Now, examinations);
+
+            Store.Instance.AddPatient(patient);
         }
     }
 }

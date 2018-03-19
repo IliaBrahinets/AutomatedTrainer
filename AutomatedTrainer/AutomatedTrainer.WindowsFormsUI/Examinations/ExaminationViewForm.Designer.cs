@@ -34,20 +34,25 @@
             this.PhysicalIndicators = new System.Windows.Forms.ListBox();
             this.Navigation = new System.Windows.Forms.MenuStrip();
             this.InvokeCreateExaminationForm = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.Navigation.SuspendLayout();
             this.SuspendLayout();
             // 
             // Dates
             // 
+            this.Dates.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Dates.FormattingEnabled = true;
-            this.Dates.Location = new System.Drawing.Point(12, 43);
+            this.Dates.ItemHeight = 16;
+            this.Dates.Location = new System.Drawing.Point(12, 69);
             this.Dates.Name = "Dates";
-            this.Dates.Size = new System.Drawing.Size(147, 329);
+            this.Dates.Size = new System.Drawing.Size(147, 324);
             this.Dates.TabIndex = 0;
             this.Dates.SelectedIndexChanged += new System.EventHandler(this.Dates_SelectedIndexChanged);
             // 
             // Type
             // 
+            this.Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Type.Location = new System.Drawing.Point(189, 69);
             this.Type.Multiline = true;
             this.Type.Name = "Type";
@@ -58,22 +63,26 @@
             // TypeLabel
             // 
             this.TypeLabel.AutoSize = true;
+            this.TypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TypeLabel.Location = new System.Drawing.Point(186, 43);
             this.TypeLabel.Name = "TypeLabel";
-            this.TypeLabel.Size = new System.Drawing.Size(26, 13);
+            this.TypeLabel.Size = new System.Drawing.Size(36, 20);
             this.TypeLabel.TabIndex = 2;
             this.TypeLabel.Text = "Тип";
             // 
             // PhysicalIndicators
             // 
+            this.PhysicalIndicators.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PhysicalIndicators.FormattingEnabled = true;
-            this.PhysicalIndicators.Location = new System.Drawing.Point(189, 148);
+            this.PhysicalIndicators.ItemHeight = 16;
+            this.PhysicalIndicators.Location = new System.Drawing.Point(189, 176);
             this.PhysicalIndicators.Name = "PhysicalIndicators";
-            this.PhysicalIndicators.Size = new System.Drawing.Size(347, 225);
+            this.PhysicalIndicators.Size = new System.Drawing.Size(347, 212);
             this.PhysicalIndicators.TabIndex = 3;
             // 
             // Navigation
             // 
+            this.Navigation.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Navigation.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.InvokeCreateExaminationForm});
             this.Navigation.Location = new System.Drawing.Point(0, 0);
@@ -89,11 +98,33 @@
             this.InvokeCreateExaminationForm.Text = "Новое обследование";
             this.InvokeCreateExaminationForm.Click += new System.EventHandler(this.InvokeCreateExaminationForm_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(186, 144);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(206, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Исследуемые показатели";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(13, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Дата";
+            // 
             // ExaminationViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(554, 446);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.PhysicalIndicators);
             this.Controls.Add(this.TypeLabel);
             this.Controls.Add(this.Type);
@@ -116,5 +147,7 @@
         private System.Windows.Forms.ListBox PhysicalIndicators;
         private System.Windows.Forms.MenuStrip Navigation;
         private System.Windows.Forms.ToolStripMenuItem InvokeCreateExaminationForm;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

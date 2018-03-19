@@ -54,7 +54,7 @@ namespace AutomatedTrainer.WindowsFormsUI
 
             next.FormClosed += (s, args) =>
             {
-                new ExaminationViewForm(WhosExaminations).Show();
+                //new ExaminationViewForm(WhosExaminations).Show();
             };
 
             next.Show();

@@ -9,11 +9,11 @@ namespace AutomatedTrainer.WindowsFormsUI.Helpers
 {
     static class ComboBoxExtension
     {
-        static public TEnum ParseEnum<TEnum>(this ComboBox comboBox) where TEnum : struct
+        static public TEnum ParseEnum<TEnum>(this ListBox listBox) where TEnum : struct
         {
             TEnum answer;
 
-            Enum.TryParse(comboBox.ToString(), out answer);
+            Enum.TryParse(listBox.SelectedItem.ToString(), out answer);
 
             return answer;
         }

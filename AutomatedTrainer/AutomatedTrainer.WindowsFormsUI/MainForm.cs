@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace AutomatedTrainer.WindowsFormsUI
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -24,6 +24,11 @@ namespace AutomatedTrainer.WindowsFormsUI
             patient.Examinations.Add(new Examination(DateTime.Now, "OK!", Store.Store.Instance.GetPhysicalIndicators()));
             patient.Examinations.Add(new Examination(DateTime.Now, "OssssK!", Store.Store.Instance.GetPhysicalIndicators()));
             new ExaminationViewForm(patient).Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new PatientViewForm().Show();
         }
     }
 }
