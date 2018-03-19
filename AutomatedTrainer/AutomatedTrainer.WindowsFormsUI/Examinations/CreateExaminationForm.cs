@@ -34,7 +34,7 @@ namespace AutomatedTrainer.WindowsFormsUI
         public void CustomInitialize()
         {
             //PhysicalIndicators
-            PhysicalIndicatorsPicker.Items.AddRange(Store.Instance.GetPhysicalIndicators());
+            PhysicalIndicatorsPicker.Items.AddRange(Store.Instance.GetPhysicalIndicators().ToArray());
             //
         }
 

@@ -39,9 +39,9 @@ namespace AutomatedTrainer.Store
             Patients.Add(patient);
         }
 
-        public Patient[] GetPatients()
+        public BindingList<Patient> GetPatients()
         {
-            return Patients.ToArray();
+            return Patients;
         }
 
         public void RemovePatient(Patient patient)
@@ -54,9 +54,9 @@ namespace AutomatedTrainer.Store
             PhysicalIndicators.Add(physicalIndicator);
         }
 
-        public PhysicalIndicator[] GetPhysicalIndicators()
+        public BindingList<PhysicalIndicator> GetPhysicalIndicators()
         {
-            return PhysicalIndicators.ToArray();
+            return PhysicalIndicators;
         }
 
         public void RemovePhysicalIndicator(PhysicalIndicator physicalIndicator)
@@ -69,9 +69,9 @@ namespace AutomatedTrainer.Store
             Sensors.Add(sensor);
         }
 
-        public ISensor[] GetSensors()
+        public BindingList<ISensor> GetSensors()
         {
-            return Sensors.ToArray();
+            return Sensors;
         }
 
         public void RemoveSensor(ISensor sensor)
