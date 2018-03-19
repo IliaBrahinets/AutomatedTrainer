@@ -7,20 +7,60 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AutomatedTrainer.Models;
 
 namespace AutomatedTrainer.WindowsFormsUI
 {
     public partial class ExaminationViewForm : Form
     {
-        public ExaminationViewForm()
+
+        private Patient WhosExaminations { get; set; }
+
+        public ExaminationViewForm(Patient patient)
         {
             InitializeComponent();
+
+            if (patient == null)
+            {
+                return;
+            }
+
+            WhosExaminations = patient;
+
+            //Dates
+            Dates.DataSource = WhosExaminations.Examinations;
+            Dates.ValueMember = "Date";
+            Dates.DisplayMember = "Дата";
+
+        }
+
+        private void Dates_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListBox listBox = sender as ListBox;
+
+            Examination selectedExamination = listBox.SelectedItem as Examination;
+
+            //Type
+            Type.Text = selectedExamination.Type;
+
+            //Physical Indicators
+            PhysicalIndicators.DataSource = selectedExamination.PhysicalIndicators.Select(el => el.ToString()).ToArray();
             
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void InvokeCreateExaminationForm_Click(object sender, EventArgs e)
         {
+            Form next = new CreateExaminationForm(WhosExaminations);
 
+            this.Hide();
+
+            next.FormClosed += (s, args) =>
+            {
+                this.Show();
+            };
+
+            next.Show();
+            next.Focus();
         }
     }
 }

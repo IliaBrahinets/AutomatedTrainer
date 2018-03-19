@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using AutomatedTrainer.ModelsValidation;
+using System.ComponentModel;
 
 namespace AutomatedTrainer.Models
 {
@@ -16,7 +17,7 @@ namespace AutomatedTrainer.Models
         public string LastName { get; set; }
         public Sex Sex { get; set; }
         public DateTime BirthDate { get; set; }
-        public List<Examination> Examinations { get; set; }
+        public BindingList<Examination> Examinations { get; set; }
 
         public string FullName
         {
@@ -31,7 +32,10 @@ namespace AutomatedTrainer.Models
         {
             if (examinations != null)
             {
-                Examinations.AddRange(examinations);
+                foreach (Examination item in examinations)
+                {
+                    Examinations.Add(item);
+                }
             }
         }
 
@@ -42,7 +46,7 @@ namespace AutomatedTrainer.Models
             LastName = lastName;
             Sex = sex;
             BirthDate = birthDate;
-            Examinations = new List<Examination>();
+            Examinations = new BindingList<Examination>();
         }
 
     }

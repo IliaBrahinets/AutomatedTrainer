@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutomatedTrainer.Models;
+using System.ComponentModel;
 
 namespace AutomatedTrainer.Store
 {
@@ -23,14 +24,14 @@ namespace AutomatedTrainer.Store
 
         protected Store()
         {
-            Patients = new List<Patient>();
-            PhysicalIndicators = new List<PhysicalIndicator>();
-            Sensors = new List<ISensor>();
+            Patients = new BindingList<Patient>();
+            PhysicalIndicators = new BindingList<PhysicalIndicator>();
+            Sensors = new BindingList<ISensor>();
         }
 
-        private List<Patient> Patients { get; set; }
-        private List<PhysicalIndicator> PhysicalIndicators { get; set; }
-        private List<ISensor> Sensors { get; set; }
+        private BindingList<Patient> Patients { get; set; }
+        private BindingList<PhysicalIndicator> PhysicalIndicators { get; set; }
+        private BindingList<ISensor> Sensors { get; set; }
 
 
         public void AddPatient(Patient patient)
