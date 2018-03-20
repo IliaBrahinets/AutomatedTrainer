@@ -13,7 +13,6 @@ namespace AutomatedTrainer.Models
         public string Name { get; protected set; }
         public string MeasureUnits { get; protected set; }
 
-
         public PhysicalIndicator(ISensor sensor)
         {
             Sensor = sensor;

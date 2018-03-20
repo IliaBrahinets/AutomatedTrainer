@@ -65,7 +65,6 @@ namespace AutomatedTrainer.WindowsFormsUI
             PatientsTable.AutoGenerateColumns = false;
             PatientsTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-
             UpdateDataSource();
         }
 
