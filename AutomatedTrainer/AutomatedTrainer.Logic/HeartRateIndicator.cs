@@ -14,5 +14,10 @@ namespace AutomatedTrainer.Models
             Name = "Показатель частоты пульса сердечного ритма";
             MeasureUnits = "уд. в мин";
         }
+
+        public override int GetValue()
+        {
+            return base.GetValue() % 30 + 78;
+        }
     }
 }

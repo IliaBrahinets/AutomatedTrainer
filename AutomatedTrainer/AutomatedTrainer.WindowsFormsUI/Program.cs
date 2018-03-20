@@ -21,9 +21,9 @@ namespace AutomatedTrainer.WindowsFormsUI
 
             StoreInitializers.Initialize();
 
-            //Application.Run(new PatientViewForm());
-            Examination examination = Store.Store.Instance.GetPatients()[0].Examinations[0];
-            Application.Run(new ExaminationForm(Store.Store.Instance.GetPatients()[0], examination));
+            Application.Run(new PatientViewForm());
+            //Examination examination = Store.Store.Instance.GetPatients()[0].Examinations[0];
+            //Application.Run(new ExaminationForm(Store.Store.Instance.GetPatients()[0], examination));
         }
     }
 }

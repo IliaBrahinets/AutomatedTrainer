@@ -36,6 +36,7 @@
             this.InvokeCreateExaminationForm = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.ExaminationFormInvoke = new System.Windows.Forms.ToolStripMenuItem();
             this.Navigation.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,7 +85,8 @@
             // 
             this.Navigation.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Navigation.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.InvokeCreateExaminationForm});
+            this.InvokeCreateExaminationForm,
+            this.ExaminationFormInvoke});
             this.Navigation.Location = new System.Drawing.Point(0, 0);
             this.Navigation.Name = "Navigation";
             this.Navigation.Size = new System.Drawing.Size(554, 24);
@@ -118,6 +120,13 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Дата";
             // 
+            // ExaminationFormInvoke
+            // 
+            this.ExaminationFormInvoke.Name = "ExaminationFormInvoke";
+            this.ExaminationFormInvoke.Size = new System.Drawing.Size(218, 20);
+            this.ExaminationFormInvoke.Text = "Провести выбранное обследование";
+            this.ExaminationFormInvoke.Click += new System.EventHandler(this.ExaminationFormInvoke_Click);
+            // 
             // ExaminationViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,5 +158,6 @@
         private System.Windows.Forms.ToolStripMenuItem InvokeCreateExaminationForm;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripMenuItem ExaminationFormInvoke;
     }
 }

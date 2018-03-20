@@ -28,9 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.PatientFullName = new System.Windows.Forms.TextBox();
             this.PatientAge = new System.Windows.Forms.TextBox();
@@ -42,9 +55,19 @@
             this.SexLabel = new System.Windows.Forms.Label();
             this.PatientAgeLabel = new System.Windows.Forms.Label();
             this.PatientFullNameLabel = new System.Windows.Forms.Label();
-            this.TestGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.IndicatorGraph1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.Synchronizer = new System.Windows.Forms.Timer(this.components);
+            this.IndicatorGraph4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.IndicatorGraph2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.IndicatorGraph5 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.IndicatorGraph3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.PlayButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TestGraph)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IndicatorGraph1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IndicatorGraph4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IndicatorGraph2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IndicatorGraph5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IndicatorGraph3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -60,9 +83,9 @@
             this.panel1.Controls.Add(this.SexLabel);
             this.panel1.Controls.Add(this.PatientAgeLabel);
             this.panel1.Controls.Add(this.PatientFullNameLabel);
-            this.panel1.Location = new System.Drawing.Point(331, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 22);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(636, 146);
+            this.panel1.Size = new System.Drawing.Size(451, 157);
             this.panel1.TabIndex = 0;
             // 
             // PatientFullName
@@ -95,7 +118,7 @@
             // ExaminationDate
             // 
             this.ExaminationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ExaminationDate.Location = new System.Drawing.Point(189, 89);
+            this.ExaminationDate.Location = new System.Drawing.Point(220, 89);
             this.ExaminationDate.Name = "ExaminationDate";
             this.ExaminationDate.ReadOnly = true;
             this.ExaminationDate.Size = new System.Drawing.Size(147, 22);
@@ -105,16 +128,17 @@
             // 
             this.ExaminationType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ExaminationType.Location = new System.Drawing.Point(220, 113);
+            this.ExaminationType.Multiline = true;
             this.ExaminationType.Name = "ExaminationType";
             this.ExaminationType.ReadOnly = true;
-            this.ExaminationType.Size = new System.Drawing.Size(372, 22);
+            this.ExaminationType.Size = new System.Drawing.Size(226, 39);
             this.ExaminationType.TabIndex = 5;
             // 
             // ExaminationTypeLabel
             // 
             this.ExaminationTypeLabel.AutoSize = true;
             this.ExaminationTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ExaminationTypeLabel.Location = new System.Drawing.Point(16, 114);
+            this.ExaminationTypeLabel.Location = new System.Drawing.Point(16, 121);
             this.ExaminationTypeLabel.Name = "ExaminationTypeLabel";
             this.ExaminationTypeLabel.Size = new System.Drawing.Size(203, 20);
             this.ExaminationTypeLabel.TabIndex = 4;
@@ -160,35 +184,123 @@
             this.PatientFullNameLabel.TabIndex = 0;
             this.PatientFullNameLabel.Text = "Пациент";
             // 
-            // TestGraph
+            // IndicatorGraph1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.TestGraph.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.TestGraph.Legends.Add(legend1);
-            this.TestGraph.Location = new System.Drawing.Point(331, 164);
-            this.TestGraph.Name = "TestGraph";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.TestGraph.Series.Add(series1);
-            this.TestGraph.Size = new System.Drawing.Size(636, 221);
-            this.TestGraph.TabIndex = 1;
-            this.TestGraph.Text = "Test";
+            chartArea6.Name = "ChartArea1";
+            this.IndicatorGraph1.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.IndicatorGraph1.Legends.Add(legend6);
+            this.IndicatorGraph1.Location = new System.Drawing.Point(12, 195);
+            this.IndicatorGraph1.Name = "IndicatorGraph1";
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.IndicatorGraph1.Series.Add(series6);
+            this.IndicatorGraph1.Size = new System.Drawing.Size(451, 159);
+            this.IndicatorGraph1.TabIndex = 1;
+            this.IndicatorGraph1.Text = "Test";
+            this.IndicatorGraph1.Click += new System.EventHandler(this.TestGraph_Click);
+            // 
+            // Synchronizer
+            // 
+            this.Synchronizer.Tick += new System.EventHandler(this.Synchronizer_Tick);
+            // 
+            // IndicatorGraph4
+            // 
+            chartArea7.Name = "ChartArea1";
+            this.IndicatorGraph4.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.IndicatorGraph4.Legends.Add(legend7);
+            this.IndicatorGraph4.Location = new System.Drawing.Point(493, 195);
+            this.IndicatorGraph4.Name = "IndicatorGraph4";
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.IndicatorGraph4.Series.Add(series7);
+            this.IndicatorGraph4.Size = new System.Drawing.Size(451, 159);
+            this.IndicatorGraph4.TabIndex = 2;
+            this.IndicatorGraph4.Text = "chart1";
+            // 
+            // IndicatorGraph2
+            // 
+            chartArea8.Name = "ChartArea1";
+            this.IndicatorGraph2.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.IndicatorGraph2.Legends.Add(legend8);
+            this.IndicatorGraph2.Location = new System.Drawing.Point(12, 360);
+            this.IndicatorGraph2.Name = "IndicatorGraph2";
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.IndicatorGraph2.Series.Add(series8);
+            this.IndicatorGraph2.Size = new System.Drawing.Size(451, 159);
+            this.IndicatorGraph2.TabIndex = 3;
+            this.IndicatorGraph2.Text = "chart2";
+            // 
+            // IndicatorGraph5
+            // 
+            chartArea9.Name = "ChartArea1";
+            this.IndicatorGraph5.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.IndicatorGraph5.Legends.Add(legend9);
+            this.IndicatorGraph5.Location = new System.Drawing.Point(493, 360);
+            this.IndicatorGraph5.Name = "IndicatorGraph5";
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            this.IndicatorGraph5.Series.Add(series9);
+            this.IndicatorGraph5.Size = new System.Drawing.Size(451, 159);
+            this.IndicatorGraph5.TabIndex = 4;
+            this.IndicatorGraph5.Text = "chart3";
+            // 
+            // IndicatorGraph3
+            // 
+            chartArea10.Name = "ChartArea1";
+            this.IndicatorGraph3.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.IndicatorGraph3.Legends.Add(legend10);
+            this.IndicatorGraph3.Location = new System.Drawing.Point(493, 22);
+            this.IndicatorGraph3.Name = "IndicatorGraph3";
+            series10.ChartArea = "ChartArea1";
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            this.IndicatorGraph3.Series.Add(series10);
+            this.IndicatorGraph3.Size = new System.Drawing.Size(451, 159);
+            this.IndicatorGraph3.TabIndex = 5;
+            this.IndicatorGraph3.Text = "chart4";
+            // 
+            // PlayButton
+            // 
+            this.PlayButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PlayButton.Location = new System.Drawing.Point(962, 476);
+            this.PlayButton.Name = "PlayButton";
+            this.PlayButton.Size = new System.Drawing.Size(90, 43);
+            this.PlayButton.TabIndex = 7;
+            this.PlayButton.Text = "Старт";
+            this.PlayButton.UseVisualStyleBackColor = true;
+            this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
             // 
             // ExaminationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(993, 606);
-            this.Controls.Add(this.TestGraph);
+            this.ClientSize = new System.Drawing.Size(1123, 546);
+            this.Controls.Add(this.PlayButton);
+            this.Controls.Add(this.IndicatorGraph3);
+            this.Controls.Add(this.IndicatorGraph5);
+            this.Controls.Add(this.IndicatorGraph2);
+            this.Controls.Add(this.IndicatorGraph4);
+            this.Controls.Add(this.IndicatorGraph1);
             this.Controls.Add(this.panel1);
             this.Name = "ExaminationForm";
             this.Text = "ExaminationForm";
-            this.Load += new System.EventHandler(this.Examinatio_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TestGraph)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IndicatorGraph1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IndicatorGraph4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IndicatorGraph2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IndicatorGraph5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IndicatorGraph3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -206,6 +318,12 @@
         private System.Windows.Forms.TextBox PatientAge;
         private System.Windows.Forms.TextBox PatientSex;
         private System.Windows.Forms.TextBox ExaminationDate;
-        private System.Windows.Forms.DataVisualization.Charting.Chart TestGraph;
+        private System.Windows.Forms.DataVisualization.Charting.Chart IndicatorGraph1;
+        private System.Windows.Forms.Timer Synchronizer;
+        private System.Windows.Forms.DataVisualization.Charting.Chart IndicatorGraph4;
+        private System.Windows.Forms.DataVisualization.Charting.Chart IndicatorGraph2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart IndicatorGraph5;
+        private System.Windows.Forms.DataVisualization.Charting.Chart IndicatorGraph3;
+        private System.Windows.Forms.Button PlayButton;
     }
 }

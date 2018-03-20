@@ -12,11 +12,17 @@ namespace AutomatedTrainer.WindowsFormsUI
 {
     using AutomatedTrainer.Models;
     using AutomatedTrainer.Store;
+    using System.Windows.Forms.DataVisualization.Charting;
+    using AutomatedTrainer.WindowsFormsUI.Examinations;
 
     public partial class ExaminationForm : Form
     {
         private Patient WhosExamination { get; set; }
         private Examination Examination { get; set; }
+
+        private GraphManager GraphManager { get; set; }
+        private TimeManager TimeManager { get; set; }
+        
 
         public ExaminationForm(Patient patient, Examination examination)
         {
@@ -26,10 +32,24 @@ namespace AutomatedTrainer.WindowsFormsUI
             InitializeComponent();
 
             ExaminationInformationInit();
+
             //SensorsPlacesSet();
-            InitializeGraphs();
+
+            this.GraphManager = new GraphManager(examination.PhysicalIndicators.ToArray(),
+                IndicatorGraph1, IndicatorGraph2, IndicatorGraph3,
+                IndicatorGraph4, IndicatorGraph5);
+
+            this.TimeManager = new TimeManager(Synchronizer);
+
+            DataRemovingInit();
         }
 
+        private void DataRemovingInit()
+        {
+            this.FormClosed += (s, args) => {
+                WhosExamination.Examinations.Remove(Examination);
+            };
+        }
         private void ExaminationInformationInit()
         {
             PatientFullName.Text = WhosExamination.FullName;
@@ -45,17 +65,32 @@ namespace AutomatedTrainer.WindowsFormsUI
 
         }
 
-        private void InitializeGraphs()
+        private void Synchronizer_Tick(object sender, EventArgs e)
         {
-            Te.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline; // тут сами поизменяет/повыбирайте тип вывода графика
-
-            for (int i = 0; i < x.Lenght; i++)
-                chart1.Series[0].Points.AddXY(x[i], y[i]);
+            GraphManager.Step(TimeManager.Step());
         }
 
-        private void Examinatio_Load(object sender, EventArgs e)
+        private void TestGraph_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void PlayButton_Click(object sender, EventArgs e)
+        {
+            if (TimeManager.IsRun())
+            {
+                TimeManager.Stop();
+
+                Button btn = sender as Button;
+                btn.Text = "Старт";
+            }
+            else
+            {
+                TimeManager.Start();
+
+                Button btn = sender as Button;
+                btn.Text = "Стоп";
+            }
         }
     }
 }

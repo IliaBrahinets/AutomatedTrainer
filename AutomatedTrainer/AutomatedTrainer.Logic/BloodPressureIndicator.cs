@@ -14,5 +14,9 @@ namespace AutomatedTrainer.Models
             Name = "Показатель кровяного давления";
             MeasureUnits = "мм рт. ст.";
         }
+        public override int GetValue()
+        {
+            return base.GetValue() % 55 + 75;
+        }
     }
 }

@@ -14,5 +14,10 @@ namespace AutomatedTrainer.Models
             Name = "Показатель влажности кожи";
             MeasureUnits = "Отн. ед.";
         }
+
+        public override int GetValue()
+        {
+            return base.GetValue() % 20 + 30;
+        }
     }
 }

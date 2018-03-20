@@ -15,5 +15,9 @@ namespace AutomatedTrainer.Models
             MeasureUnits = "C";
         }
 
+        public override int GetValue()
+        {
+            return base.GetValue() % 9 + 30;
+        }
     }
 }

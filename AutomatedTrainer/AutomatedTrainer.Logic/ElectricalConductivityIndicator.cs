@@ -14,5 +14,10 @@ namespace AutomatedTrainer.Models
             Name = "Показатель проводимости кожи";
             MeasureUnits = "отн. ед.";
         }
+
+        public override int GetValue()
+        {
+            return base.GetValue() % 35 + 25;
+        }
     }
 }
