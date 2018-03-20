@@ -17,6 +17,7 @@ namespace AutomatedTrainer.Models
         public RandomSensor()
         {
             RandomGenerator = new Random(DateTime.Now.GetHashCode());
+
             Status = SensorStatus.WorkingCorrectly;
         }
 

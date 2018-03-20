@@ -32,7 +32,7 @@ namespace AutomatedTrainer.Models
             return $"{Name} ({MeasureUnits})";
         }
 
-        protected ISensor Sensor;
+        public ISensor Sensor;
 
 
 
