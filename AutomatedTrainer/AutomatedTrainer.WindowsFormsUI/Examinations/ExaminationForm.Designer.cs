@@ -213,7 +213,6 @@
             this.IndicatorGraph1.Size = new System.Drawing.Size(676, 245);
             this.IndicatorGraph1.TabIndex = 1;
             this.IndicatorGraph1.Text = "Test";
-            this.IndicatorGraph1.Click += new System.EventHandler(this.TestGraph_Click);
             // 
             // Synchronizer
             // 

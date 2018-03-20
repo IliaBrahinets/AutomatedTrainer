@@ -27,6 +27,10 @@ namespace AutomatedTrainer.WindowsFormsUI.Examinations
             {
                 Graphs[i].Titles.Add($"{i + 1}. {PhysicalIndicators[i]}");
                 Graphs[i].Series[0].ChartType = SeriesChartType.Spline;
+                
+            }
+            for(int i = 0; i < Graphs.Length; i++)
+            {
                 Graphs[i].Series[0].IsVisibleInLegend = false;
             }
         }

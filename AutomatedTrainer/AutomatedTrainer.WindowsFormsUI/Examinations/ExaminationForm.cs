@@ -142,11 +142,6 @@ namespace AutomatedTrainer.WindowsFormsUI
             GraphManager.Step(TimeManager.Step());
         }
 
-        private void TestGraph_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void PlayButton_Click(object sender, EventArgs e)
         {
             if (TimeManager.IsRun())

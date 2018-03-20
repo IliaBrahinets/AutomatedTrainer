@@ -46,18 +46,49 @@ namespace AutomatedTrainer.WindowsFormsUI
             examinationButtons.Text = "Показать";
             examinationButtons.UseColumnTextForButtonValue = true;
             PatientsTable.CellClick += 
-                                                new DataGridViewCellEventHandler(PatientsTable_ExaminationsButtons);
+                new DataGridViewCellEventHandler(PatientsTable_ExaminationsButtons);
+
+            DataGridViewButtonColumn removeButtons = new DataGridViewButtonColumn();
+            removeButtons.HeaderText = "Удаление";
+            removeButtons.Name = "RemovePatient";
+            removeButtons.Text = "Удалить";
+            removeButtons.UseColumnTextForButtonValue = true;
+            PatientsTable.CellClick +=
+                new DataGridViewCellEventHandler(PatientsTable_RemovePatientButtons);
 
             PatientsTable.Columns.Add(fullNameColumn);
             PatientsTable.Columns.Add(birthDateColumn);
             PatientsTable.Columns.Add(sexColumn);
             PatientsTable.Columns.Add(examinationButtons);
+            PatientsTable.Columns.Add(removeButtons);
 
             PatientsTable.AutoGenerateColumns = false;
             PatientsTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
 
             UpdateDataSource();
+        }
+
+        private void PatientsTable_RemovePatientButtons(object sender, DataGridViewCellEventArgs e)
+        {
+            int columnIndex = e.ColumnIndex;
+
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+
+            if (columnIndex == PatientsTable.Columns["RemovePatient"].Index)
+            {
+                var patients = PatientsTable.DataSource as IList<Patient>;
+
+                int i = e.RowIndex;
+
+                Store.Instance.RemovePatient(patients[i]);
+
+                UpdateDataSource();
+
+            }
         }
 
         private void UpdateDataSource()
@@ -69,7 +100,13 @@ namespace AutomatedTrainer.WindowsFormsUI
         {
             int columnIndex = e.ColumnIndex;
 
-            if(columnIndex == PatientsTable.Columns["Examination"].Index)
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+
+
+            if (columnIndex == PatientsTable.Columns["Examination"].Index)
             {
                 var patients = PatientsTable.DataSource as IList<Patient>;
 
