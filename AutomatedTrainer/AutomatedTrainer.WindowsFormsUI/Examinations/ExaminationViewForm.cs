@@ -66,12 +66,15 @@ namespace AutomatedTrainer.WindowsFormsUI
         private void ExaminationFormInvoke_Click(object sender, EventArgs e)
         {
 
-            Form next = new ExaminationForm(WhosExaminations, Dates.SelectedItem as Examination);
+            if (Dates.SelectedItem != null)
+            {
+                Form next = new ExaminationForm(WhosExaminations, Dates.SelectedItem as Examination);
 
-            next.Show();
-            next.Focus();
+                next.Show();
+                next.Focus();
 
-            this.Close();
+                this.Close();
+            }
         }
     }
 }

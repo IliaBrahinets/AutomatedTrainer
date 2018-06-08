@@ -14,6 +14,7 @@ namespace AutomatedTrainer.WindowsFormsUI
     using AutomatedTrainer.Store;
     using System.Windows.Forms.DataVisualization.Charting;
     using AutomatedTrainer.WindowsFormsUI.Examinations;
+    using System.Drawing.Imaging;
 
     public partial class ExaminationForm : Form
     {
@@ -22,7 +23,8 @@ namespace AutomatedTrainer.WindowsFormsUI
 
         private GraphManager GraphManager { get; set; }
         private TimeManager TimeManager { get; set; }
-        
+        private SensorPlacesManager SensorPlacesManager { get; set; }
+
 
         public ExaminationForm(Patient patient, Examination examination)
         {
@@ -33,30 +35,18 @@ namespace AutomatedTrainer.WindowsFormsUI
 
             ExaminationInformationInit();
 
-            SensorPlaceInit();
-
             this.GraphManager = new GraphManager(examination.PhysicalIndicators.ToArray(),
                 IndicatorGraph1, IndicatorGraph2, IndicatorGraph3,
                 IndicatorGraph4, IndicatorGraph5);
 
             this.TimeManager = new TimeManager(Synchronizer);
 
+            this.SensorPlacesManager = new SensorPlacesManager(examination.PhysicalIndicators.ToArray(), HumansBody);
+
             DataRemovingInit();
         }
 
-        private void SensorPlaceInit()
-        {
-            HumansBody.Image = Image.FromFile(@"Images/HumansBody.jpg");
-            HumansBody.SizeMode = PictureBoxSizeMode.Zoom;
-
-            Graphics g = HumansBody.CreateGraphics();
-
-  
-            Pen mypen = new Pen(Color.Black);
-            g.DrawLine(mypen, 0, 0, 200, 150);
-
-        }
-
+        
         private void DataRemovingInit()
         {
             this.FormClosed += (s, args) => {
@@ -81,11 +71,6 @@ namespace AutomatedTrainer.WindowsFormsUI
         private void Synchronizer_Tick(object sender, EventArgs e)
         {
             GraphManager.Step(TimeManager.Step());
-        }
-
-        private void TestGraph_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void PlayButton_Click(object sender, EventArgs e)

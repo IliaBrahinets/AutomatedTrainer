@@ -65,6 +65,7 @@
       <DependentUpon>ExaminationViewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Examinations\GraphManager.cs" />
+    <Compile Include="Examinations\SensorPlacesManager.cs" />
     <Compile Include="Examinations\TimeManager.cs" />
     <Compile Include="Helpers\ComboBoxExtension.cs" />
     <Compile Include="Patients\CreatePatientForm.cs">
