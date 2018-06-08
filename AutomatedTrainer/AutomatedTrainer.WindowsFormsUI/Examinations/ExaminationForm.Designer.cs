@@ -62,12 +62,14 @@
             this.IndicatorGraph5 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.IndicatorGraph3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.PlayButton = new System.Windows.Forms.Button();
+            this.HumansBody = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IndicatorGraph1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IndicatorGraph4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IndicatorGraph2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IndicatorGraph5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IndicatorGraph3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HumansBody)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -272,7 +274,7 @@
             // PlayButton
             // 
             this.PlayButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PlayButton.Location = new System.Drawing.Point(962, 476);
+            this.PlayButton.Location = new System.Drawing.Point(1022, 491);
             this.PlayButton.Name = "PlayButton";
             this.PlayButton.Size = new System.Drawing.Size(90, 43);
             this.PlayButton.TabIndex = 7;
@@ -280,11 +282,20 @@
             this.PlayButton.UseVisualStyleBackColor = true;
             this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
             // 
+            // HumansBody
+            // 
+            this.HumansBody.Location = new System.Drawing.Point(956, 22);
+            this.HumansBody.Name = "HumansBody";
+            this.HumansBody.Size = new System.Drawing.Size(186, 463);
+            this.HumansBody.TabIndex = 8;
+            this.HumansBody.TabStop = false;
+            // 
             // ExaminationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1123, 546);
+            this.ClientSize = new System.Drawing.Size(1148, 546);
+            this.Controls.Add(this.HumansBody);
             this.Controls.Add(this.PlayButton);
             this.Controls.Add(this.IndicatorGraph3);
             this.Controls.Add(this.IndicatorGraph5);
@@ -301,6 +312,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.IndicatorGraph2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IndicatorGraph5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IndicatorGraph3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HumansBody)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -325,5 +337,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart IndicatorGraph5;
         private System.Windows.Forms.DataVisualization.Charting.Chart IndicatorGraph3;
         private System.Windows.Forms.Button PlayButton;
+        private System.Windows.Forms.PictureBox HumansBody;
     }
 }

@@ -33,7 +33,7 @@ namespace AutomatedTrainer.WindowsFormsUI
 
             ExaminationInformationInit();
 
-            //SensorsPlacesSet();
+            SensorPlaceInit();
 
             this.GraphManager = new GraphManager(examination.PhysicalIndicators.ToArray(),
                 IndicatorGraph1, IndicatorGraph2, IndicatorGraph3,
@@ -42,6 +42,19 @@ namespace AutomatedTrainer.WindowsFormsUI
             this.TimeManager = new TimeManager(Synchronizer);
 
             DataRemovingInit();
+        }
+
+        private void SensorPlaceInit()
+        {
+            HumansBody.Image = Image.FromFile(@"Images/HumansBody.jpg");
+            HumansBody.SizeMode = PictureBoxSizeMode.Zoom;
+
+            Graphics g = HumansBody.CreateGraphics();
+
+  
+            Pen mypen = new Pen(Color.Black);
+            g.DrawLine(mypen, 0, 0, 200, 150);
+
         }
 
         private void DataRemovingInit()
